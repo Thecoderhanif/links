@@ -34,9 +34,9 @@ class MyDocument extends Document {
           <script
             async
             defer
-            data-website-id="16e5d288-8427-4ad4-ac36-2072c966dcd0"
-            src="https://u.opakholis.dev/umami.js"
+            data-website-id="01810411-d357-49a8-87a3-1bbc5eaf6303"
             data-do-not-track="true"
+            src="https://u.opakholis.dev/umami.js"
           />
         </Head>
         <body>
