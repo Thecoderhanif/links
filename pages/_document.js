@@ -34,7 +34,7 @@ class MyDocument extends Document {
           <script
             async
             defer
-            data-website-id="01810411-d357-49a8-87a3-1bbc5eaf6303"
+            data-website-id="2c98cf64-36fa-4d17-a62a-e26b27e34d9e"
             data-do-not-track="true"
             src="https://u.opakholis.dev/umami.js"
           />
