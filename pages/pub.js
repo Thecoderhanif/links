@@ -8,6 +8,8 @@ import {
   Badge,
   HStack,
   Heading,
+  Alert,
+  AlertIcon,
   useColorModeValue
 } from '@chakra-ui/react';
 
@@ -41,29 +43,38 @@ export default function Pub({ data }) {
           <Text color={secondaryText} lineHeight="tall" mb={20}>
             Tempat mempublikasikan sesuatu yang memang untuk dipublikasikan
           </Text>
-          {data.map(({ title, date, id }) => {
-            const slug = slugify(title, { lower: true });
-            return (
-              <HStack key={id} alignItems="center" w="100%">
-                <Badge variant="outline" mr={[2, 5]}>
-                  {date}
-                </Badge>
-                <Box flex="1" w={['75%', '85%', '100%']}>
-                  <NextLink href={`pub/${slug}`}>
-                    <Link>
-                      <Text
-                        textOverflow="ellipsis"
-                        whiteSpace="nowrap"
-                        overflow="hidden"
-                      >
-                        {title}
-                      </Text>
-                    </Link>
-                  </NextLink>
-                </Box>
-              </HStack>
-            );
-          })}
+          {data.length === 0 ? (
+            <HStack mt="-2rem">
+              <Alert status="error">
+                Oppss.. Sepertinya belum ada publikasi yang dapat ditampilkan
+                😿.
+              </Alert>
+            </HStack>
+          ) : (
+            data.map(({ title, date, id }) => {
+              const slug = slugify(title, { lower: true });
+              return (
+                <HStack key={id} alignItems="center" w="100%">
+                  <Badge variant="outline" mr={[2, 5]}>
+                    {date}
+                  </Badge>
+                  <Box flex="1" w={['75%', '85%', '100%']}>
+                    <NextLink href={`pub/${slug}`}>
+                      <Link>
+                        <Text
+                          textOverflow="ellipsis"
+                          whiteSpace="nowrap"
+                          overflow="hidden"
+                        >
+                          {title}
+                        </Text>
+                      </Link>
+                    </NextLink>
+                  </Box>
+                </HStack>
+              );
+            })
+          )}
         </Box>
       </Container>
     </>
