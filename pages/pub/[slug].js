@@ -40,7 +40,7 @@ export const getStaticPaths = async () => {
   const data = await res.json();
 
   const paths = data
-    .filter((table) => table.status === 'Published')
+    .filter((table) => table.published)
     .map((b) => `/pub/${slugify(b.title, { lower: true })}`);
 
   return {

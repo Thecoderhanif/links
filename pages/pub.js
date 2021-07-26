@@ -41,7 +41,6 @@ export default function Pub({ data }) {
           <Text color={secondaryText} lineHeight="tall" mb={20}>
             Tempat mempublikasikan sesuatu yang memang untuk dipublikasikan
           </Text>
-
           {data.map(({ title, date, id }) => {
             const slug = slugify(title, { lower: true });
             return (
@@ -79,8 +78,10 @@ export const getStaticProps = async () => {
 
   if (!data) return { notFound: true };
 
+  const wasPublished = data.filter((d) => d.published);
+
   return {
-    props: { data },
+    props: { data: wasPublished },
     revalidate: 1
   };
 };
