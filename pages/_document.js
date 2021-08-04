@@ -5,7 +5,7 @@ import theme from '@/styles/theme';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="id">
         <Head>
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/static/favicons/site.webmanifest" rel="manifest" />
