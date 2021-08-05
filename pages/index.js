@@ -45,7 +45,7 @@ const Index = () => {
           <React boxSize={12} mr={4} />
         </ProjectCard>
         <ProjectCard
-          title="Bookshelves"
+          title="Bookshelf"
           description='Saya tidak suka menyimpan buku fisik. Sebagai gantinya saya membuat "Rak Buku" dengan memanfaatkan Notion sebagai database.'
           href="https://books.opakholis.dev"
         >
