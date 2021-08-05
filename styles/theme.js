@@ -40,10 +40,10 @@ const theme = extendTheme({
   },
   fontWeights: {
     normal: 400,
-    medium: 600,
+    medium: 500,
     bold: 700
   }
 });
 
-export { default as Fonts } from './font-face';
+export { default as FontFace } from './font-face';
 export default theme;
