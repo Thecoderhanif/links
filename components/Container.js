@@ -36,6 +36,7 @@ export default function Container({ children }) {
           aria-label="Toggle dark mode"
           icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
           onClick={toggleColorMode}
+          rounded="md"
         />
         <HStack spacing={3}>
           <NavLink href="/" text="Home" isActive={pathname === '/'} />
