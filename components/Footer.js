@@ -21,7 +21,7 @@ export default function Footer() {
     <VStack as="footer" spacing={0} maxW="768px" w="100%" px={8} mx="auto">
       <Divider orientation="horizontal" my={8} />
       <NowPlaying />
-      <HStack spacing={2} pt={3}>
+      <HStack spacing={2} pt={3} pb={[0, 3]}>
         <Icon
           href="https://twitter.com/opakholis"
           ariaLabel="Twitter"
@@ -42,7 +42,7 @@ export default function Footer() {
       <HStack
         spacing={5}
         color={secondaryText}
-        pb={5}
+        pb={[5, 10]}
         fontSize={['sm', 'initial']}
       >
         <NextLink href="/uses">

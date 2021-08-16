@@ -11,7 +11,6 @@ import {
 import { ArrowBackIcon, ArrowUpIcon } from '@chakra-ui/icons';
 
 import BlogSeo from '@/components/BlogSeo';
-import Container from '@/components/Container';
 import { Date, Time } from '@/styles/icons';
 
 export default function BlogLayout({ children, frontMatter }) {
@@ -19,7 +18,7 @@ export default function BlogLayout({ children, frontMatter }) {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
 
   return (
-    <Container>
+    <>
       <BlogSeo url={frontMatter.slug} {...frontMatter} />
       <Box pb={5}>
         <Heading
@@ -70,7 +69,7 @@ export default function BlogLayout({ children, frontMatter }) {
           onClick={() => window.scrollTo(0, 0)}
         />
       </HStack>
-    </Container>
+    </>
   );
 }
 

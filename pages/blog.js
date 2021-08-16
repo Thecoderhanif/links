@@ -8,14 +8,14 @@ import {
   Heading,
   InputGroup,
   InputRightElement,
-  useColorModeValue
+  useColorModeValue,
+  InputLeftElement
 } from '@chakra-ui/react';
 
 import { Search2Icon } from '@chakra-ui/icons';
 
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import BlogPost from '@/components/BlogPost';
-import Container from '@/components/Container';
 
 const url = 'https://opakholis.dev/blog';
 const title = 'Blog - Opa Kholis Majid';
@@ -24,6 +24,8 @@ const description =
 
 export default function Blog({ posts }) {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
+  const iconColor = useColorModeValue('gray.300', 'gray.700');
+
   const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts
     .sort(
@@ -45,45 +47,43 @@ export default function Blog({ posts }) {
         openGraph={{ url, title, description }}
       />
 
-      <Container>
-        <Box pb={5} pt={2}>
-          <Heading
-            as="h1"
-            fontSize={['4xl', '5xl']}
-            letterSpacing="tight"
-            my={5}
-          >
-            Tulisan.
-          </Heading>
-          <Text color={secondaryText} lineHeight="tall">
-            Halaman ini berisi tulisan, opini dan juga merupakan dokumentasi
-            untuk saya pribadi ketika sedang belajar atau membagikan sesuatu.
-            Enjoy your reading!
-          </Text>
+      <Box pb={5} pt={2}>
+        <Heading as="h1" fontSize={['4xl', '5xl']} letterSpacing="tight" my={5}>
+          Tulisan.
+        </Heading>
+        <Text color={secondaryText} lineHeight="tall">
+          Halaman ini berisi tulisan, opini dan juga merupakan dokumentasi untuk
+          saya pribadi ketika sedang belajar atau membagikan sesuatu. Enjoy your
+          reading!
+        </Text>
 
-          <InputGroup mt={5}>
-            <Input
-              aria-label="Cari tulisan"
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Cari tulisan.."
-            />
-            <InputRightElement>
-              <Search2Icon color="gray.400" />
-            </InputRightElement>
-          </InputGroup>
+        <InputGroup mt={5}>
+          <InputLeftElement
+            pointerEvents="none"
+            // eslint-disable-next-line react/no-children-prop
+            children={<Search2Icon color={iconColor} />}
+          />
+          <Input
+            aria-label="Cari tulisan"
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Cari tulisan.."
+          />
+          <InputRightElement color={secondaryText}>
+            {filteredBlogPosts.length}
+          </InputRightElement>
+        </InputGroup>
 
-          <Flex flexDirection="column" my={5}>
-            {!filteredBlogPosts.length && (
-              <Text color={secondaryText}>
-                Artikel yang kamu cari tidak ditemukan 😿
-              </Text>
-            )}
-            {filteredBlogPosts.map((frontMatter) => (
-              <BlogPost key={frontMatter.title} {...frontMatter} />
-            ))}
-          </Flex>
-        </Box>
-      </Container>
+        <Flex flexDirection="column" my={5}>
+          {!filteredBlogPosts.length && (
+            <Text color={secondaryText}>
+              Artikel yang kamu cari tidak ditemukan 😿
+            </Text>
+          )}
+          {filteredBlogPosts.map((frontMatter) => (
+            <BlogPost key={frontMatter.title} {...frontMatter} />
+          ))}
+        </Flex>
+      </Box>
     </>
   );
 }

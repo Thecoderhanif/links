@@ -7,7 +7,6 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 
-import Container from '@/components/Container';
 import ProjectCard from '@/components/ProjectCard';
 import Timeline from '@/components/Timeline';
 
@@ -16,7 +15,7 @@ import { Notion, React } from '@/styles/icons';
 const Index = () => {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
   return (
-    <Container>
+    <>
       <Box pb={5} pt={2}>
         <Heading as="h1" fontSize={['4xl', '5xl']} letterSpacing="tight" my={5}>
           Halo Semua.
@@ -24,7 +23,7 @@ const Index = () => {
         <Text color={secondaryText} lineHeight="tall">
           Perkenalkan, nama saya Opa Kholis Majid. Seseorang yang menyebut
           dirinya sebagai Frontend developer—yang mana sekarang sedang senang
-          ber-eksplorasi dengan Linux distribution dan Open-source Software.
+          ber-eksplorasi dengan Linux distribution dan Open-source software.
         </Text>
         <Link href="/whoami" passHref>
           <Button as="a" fontSize="sm" my={5} variant="outline">
@@ -46,14 +45,14 @@ const Index = () => {
         </ProjectCard>
         <ProjectCard
           title="Bookshelf"
-          description='Saya tidak suka menyimpan buku fisik. Sebagai gantinya saya membuat "Rak Buku" dengan memanfaatkan Notion sebagai database.'
+          description='Saya tidak suka menyimpan buku fisik. Sebagai gantinya saya membuat "Perpustakaan pribadi" dengan memanfaatkan Notion sebagai database.'
           href="https://books.opakholis.dev"
         >
           <Notion boxSize={12} mr={4} />
         </ProjectCard>
       </Box>
       <Timeline />
-    </Container>
+    </>
   );
 };
 
