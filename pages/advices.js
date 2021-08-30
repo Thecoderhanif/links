@@ -1,18 +1,7 @@
-import useSWR from 'swr';
 import { NextSeo } from 'next-seo';
-import {
-  Box,
-  Text,
-  Flex,
-  Heading,
-  Spinner,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Text, Heading, useColorModeValue } from '@chakra-ui/react';
 
-import AdviceForm from '@/components/AdviceForm';
-import AdviceMessage from '@/components/AdviceMessage';
-import { AuthProvider } from '@/lib/firebase/auth';
-import fetcher from '@/lib/fetcher';
+import Advices from '@/components/Advices';
 
 const url = 'https://opakholis.dev/advices';
 const title = 'Pesanmu - Opa Kholis Majid';
@@ -21,12 +10,9 @@ const description =
 
 export default function AdviceMe() {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
-  const spinner = useColorModeValue('gray.900', 'white');
-
-  const { data } = useSWR('/api/advices', fetcher);
 
   return (
-    <AuthProvider>
+    <>
       <NextSeo
         title={title}
         description={description}
@@ -42,15 +28,8 @@ export default function AdviceMe() {
           Halaman ini dibuat untuk menampung segala keluh kesah, pendapat,
           informasi, atau bahkan nasihat untuk <b>Opa Kholis Majid</b>.
         </Text>
-        <AdviceForm />
-        {data ? (
-          <AdviceMessage advices={data.advices} />
-        ) : (
-          <Flex justifyContent="center" justifyItems="center">
-            <Spinner thickness="3px" speed="0.65s" color={spinner} />
-          </Flex>
-        )}
+        <Advices />
       </Box>
-    </AuthProvider>
+    </>
   );
 }
