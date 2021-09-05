@@ -21,6 +21,7 @@ public/sw.js
 
 # misc
 .DS_Store
+.eslintcache
 *.pem
 *.log
 
