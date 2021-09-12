@@ -34,8 +34,8 @@ const theme = extendTheme({
     })
   },
   fonts: {
-    body: `Inter, ${systemFonts}`,
-    heading: `Inter, ${systemFonts}`,
+    body: `InterVariable, ${systemFonts}`,
+    heading: `InterVariable, ${systemFonts}`,
     mono: 'Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace'
   },
   fontWeights: {
@@ -45,5 +45,4 @@ const theme = extendTheme({
   }
 });
 
-export { default as FontFace } from './font-face';
 export default theme;

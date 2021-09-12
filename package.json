@@ -26,6 +26,7 @@
     "@chakra-ui/react": "^1.6.7",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/inter": "^4.5.0",
     "@supabase/supabase-js": "^1.22.3",
     "date-fns": "^2.22.1",
     "focus-visible": "^5.2.0",
