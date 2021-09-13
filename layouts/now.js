@@ -29,16 +29,9 @@ export default function UsesLayout({ children }) {
       </Box>
       {children}
 
-      <Text
-        color={secondaryText}
-        mt={4}
-        textAlign="right"
-        fontSize="sm"
-        fontStyle="italic"
-      >
+      <Text color={secondaryText} mt={4} textAlign="right" fontSize="sm" fontStyle="italic">
         "This page is inspired by&nbsp;
-        <CustomLink href="https://sivers.org/">Derek Sivers</CustomLink>&nbsp;
-        as&nbsp;
+        <CustomLink href="https://sivers.org/">Derek Sivers</CustomLink>&nbsp; as&nbsp;
         <CustomLink href="https://nownownow.com/about">/now page </CustomLink>
         &nbsp;movement."
       </Text>

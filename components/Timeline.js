@@ -49,16 +49,14 @@ const FullTimeLine = () => (
     </Heading>
     <List>
       <TimelineStep title="Kompetisi Diskominfo Karawang 🏅">
-        Berkolaborasi dengan tim sebagai Frontend developer dalam membangun
-        sebuah sistem "Smart City" berbasis website.
+        Berkolaborasi dengan tim sebagai Frontend developer dalam membangun sebuah sistem "Smart
+        City" berbasis website.
         <br />
         <Badge ariant="subtle" colorScheme="green" rounded="base">
           Juara III
         </Badge>
       </TimelineStep>
-      <TimelineStep title="Partisipan Sertifikasi BNSP 🎉">
-        Sebagai Web developer.
-      </TimelineStep>
+      <TimelineStep title="Partisipan Sertifikasi BNSP 🎉">Sebagai Web developer.</TimelineStep>
     </List>
   </>
 );

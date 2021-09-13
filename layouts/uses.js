@@ -24,22 +24,15 @@ export default function UsesLayout({ children }) {
           What I Use.
         </Heading>
         <Text color={secondaryText}>
-          Although no one cares to ask me what I use. but, here is a list of
-          stuff that fits my daily routine and requirement.
+          Although no one cares to ask me what I use. but, here is a list of stuff that fits my
+          daily routine and requirement.
         </Text>
       </Box>
       {children}
 
-      <Text
-        color={secondaryText}
-        mt={4}
-        textAlign="right"
-        fontSize="sm"
-        fontStyle="italic"
-      >
+      <Text color={secondaryText} mt={4} textAlign="right" fontSize="sm" fontStyle="italic">
         "This page is inspired by&nbsp;
-        <CustomLink href="https://wesbos.com/">Wes Bos</CustomLink>&nbsp;and
-        listed on&nbsp;
+        <CustomLink href="https://wesbos.com/">Wes Bos</CustomLink>&nbsp;and listed on&nbsp;
         <CustomLink href="https://uses.tech">uses.tech</CustomLink>"
       </Text>
     </>

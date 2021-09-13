@@ -5,8 +5,7 @@ import Advices from '@/components/Advices';
 
 const meta = {
   title: 'Pesanmu',
-  description:
-    'Keluh kesah, pendapat, informasi, atau bahkan nasihat untuk Opa.'
+  description: 'Keluh kesah, pendapat, informasi, atau bahkan nasihat untuk Opa.'
 };
 
 export default function AdviceMe() {
@@ -25,8 +24,8 @@ export default function AdviceMe() {
           Pesan untuk Opa.
         </Heading>
         <Text color={secondaryText} lineHeight="tall">
-          Halaman ini dibuat untuk menampung segala keluh kesah, pendapat,
-          informasi, atau bahkan nasihat untuk <b>Opa Kholis Majid</b>.
+          Halaman ini dibuat untuk menampung segala keluh kesah, pendapat, informasi, atau bahkan
+          nasihat untuk <b>Opa Kholis Majid</b>.
         </Text>
         <Advices />
       </Box>

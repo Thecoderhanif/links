@@ -1,12 +1,6 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import {
-  Box,
-  Text,
-  Button,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Text, Button, Heading, useColorModeValue } from '@chakra-ui/react';
 
 import ProjectCard from '@/components/ProjectCard';
 import Timeline from '@/components/Timeline';
@@ -27,9 +21,9 @@ const Index = () => {
           Halo Semua.
         </Heading>
         <Text color={secondaryText} lineHeight="tall">
-          Perkenalkan, nama saya Opa Kholis Majid. Seseorang yang menyebut
-          dirinya sebagai Frontend developer—yang mana sekarang sedang senang
-          ber-eksplorasi dengan Linux distribution dan Open-source software.
+          Perkenalkan, nama saya Opa Kholis Majid. Seseorang yang menyebut dirinya sebagai Frontend
+          developer—yang mana sekarang sedang senang ber-eksplorasi dengan Linux distribution dan
+          Open-source software.
         </Text>
         <Link href="/whoami" passHref>
           <Button as="a" fontSize="sm" my={5} variant="outline">

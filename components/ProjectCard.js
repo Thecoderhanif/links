@@ -1,12 +1,4 @@
-import {
-  Box,
-  Link,
-  Text,
-  Flex,
-  Stack,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Link, Text, Flex, Stack, Heading, useColorModeValue } from '@chakra-ui/react';
 
 export default function ProjectCard({ title, description, href, children }) {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');

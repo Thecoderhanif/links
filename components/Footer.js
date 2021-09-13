@@ -1,12 +1,5 @@
 import NextLink from 'next/link';
-import {
-  Link,
-  VStack,
-  HStack,
-  Divider,
-  IconButton,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Link, VStack, HStack, Divider, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { Mail, Github, Twitter } from '@/styles/icons';
@@ -27,24 +20,11 @@ export default function Footer() {
           ariaLabel="Twitter"
           icon={<Twitter boxSize={5} />}
         />
-        <Icon
-          href="https://github.com/opxop"
-          ariaLabel="Github"
-          icon={<Github boxSize={5} />}
-        />
-        <Icon
-          href="mailto:hi@opakholis.dev"
-          ariaLabel="Email"
-          icon={<Mail boxSize={5} />}
-        />
+        <Icon href="https://github.com/opxop" ariaLabel="Github" icon={<Github boxSize={5} />} />
+        <Icon href="mailto:hi@opakholis.dev" ariaLabel="Email" icon={<Mail boxSize={5} />} />
       </HStack>
 
-      <HStack
-        spacing={5}
-        color={secondaryText}
-        pb={[5, 10]}
-        fontSize={['sm', 'initial']}
-      >
+      <HStack spacing={5} color={secondaryText} pb={[5, 10]} fontSize={['sm', 'initial']}>
         <NextLink href="/uses">
           <Link _hover={{ color: hoverText }}>/uses</Link>
         </NextLink>

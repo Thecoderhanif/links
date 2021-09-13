@@ -26,11 +26,7 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/static/favicons/favicon-16x16.png"
           />
-          <link
-            color="#171923"
-            href="/static/favicons/safari-pinned-tab.svg"
-            rel="mask-icon"
-          />
+          <link color="#171923" href="/static/favicons/safari-pinned-tab.svg" rel="mask-icon" />
           <script
             async
             defer

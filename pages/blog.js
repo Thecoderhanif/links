@@ -29,10 +29,7 @@ export default function Blog({ posts }) {
 
   const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    )
+    .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)))
     .filter(
       (frontMatter) =>
         frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -52,9 +49,8 @@ export default function Blog({ posts }) {
           Tulisan.
         </Heading>
         <Text color={secondaryText} lineHeight="tall">
-          Halaman ini berisi tulisan, opini dan juga merupakan dokumentasi untuk
-          saya pribadi ketika sedang belajar atau membagikan sesuatu. Enjoy your
-          reading!
+          Halaman ini berisi tulisan, opini dan juga merupakan dokumentasi untuk saya pribadi ketika
+          sedang belajar atau membagikan sesuatu. Enjoy your reading!
         </Text>
 
         <InputGroup mt={5}>
@@ -68,16 +64,12 @@ export default function Blog({ posts }) {
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Cari tulisan.."
           />
-          <InputRightElement color={secondaryText}>
-            {filteredBlogPosts.length}
-          </InputRightElement>
+          <InputRightElement color={secondaryText}>{filteredBlogPosts.length}</InputRightElement>
         </InputGroup>
 
         <Flex flexDirection="column" my={5}>
           {!filteredBlogPosts.length && (
-            <Text color={secondaryText}>
-              Artikel yang kamu cari tidak ditemukan 😿
-            </Text>
+            <Text color={secondaryText}>Artikel yang kamu cari tidak ditemukan 😿</Text>
           )}
           {filteredBlogPosts.map((frontMatter) => (
             <BlogPost key={frontMatter.title} {...frontMatter} />

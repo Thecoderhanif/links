@@ -39,13 +39,7 @@ export default function NowPlaying() {
             src={data?.albumImageUrl || '/static/images/placeholder.jpg'}
           />
         </Skeleton>
-        <SkeletonText
-          isLoaded={data}
-          noOfLines={2}
-          spacing={4}
-          ml={2}
-          w="160px"
-        >
+        <SkeletonText isLoaded={data} noOfLines={2} spacing={4} ml={2} w="160px">
           <Stack
             spacing={0}
             justifyContent="center"

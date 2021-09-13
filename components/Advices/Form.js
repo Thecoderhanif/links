@@ -27,14 +27,7 @@ export default function AdviceForm() {
   });
 
   return (
-    <Stack
-      p={6}
-      my={6}
-      bgColor={bgCard}
-      borderWidth="2px"
-      rounded="md"
-      spacing={4}
-    >
+    <Stack p={6} my={6} bgColor={bgCard} borderWidth="2px" rounded="md" spacing={4}>
       <Heading fontSize="2xl">👏 Surprise me!</Heading>
       <Text color={secondaryText} my={2}>
         Tinggalkan pesan apa saja yang menurut kamu pantas.
@@ -58,17 +51,11 @@ export default function AdviceForm() {
         </InputGroup>
       ) : (
         <Stack justifyContent="start" direction={['column', 'row']} spacing={4}>
-          <Button
-            onClick={() => loginWith3rdParty('github')}
-            fontWeight="normal"
-          >
+          <Button onClick={() => loginWith3rdParty('github')} fontWeight="normal">
             <Github mr={2} />
             Login dengan Github
           </Button>
-          <Button
-            onClick={() => loginWith3rdParty('google')}
-            fontWeight="normal"
-          >
+          <Button onClick={() => loginWith3rdParty('google')} fontWeight="normal">
             <Google mr={2} />
             Login dengan Google
           </Button>

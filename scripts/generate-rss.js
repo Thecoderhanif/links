@@ -15,9 +15,7 @@ async function generate() {
 
   await Promise.all(
     posts.map(async (name) => {
-      const content = await fs.readFile(
-        path.join(__dirname, '..', 'data', 'blog', name)
-      );
+      const content = await fs.readFile(path.join(__dirname, '..', 'data', 'blog', name));
       const frontmatter = matter(content);
 
       feed.item({

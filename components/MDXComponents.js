@@ -2,16 +2,7 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { jsx } from '@emotion/react';
-import {
-  Box,
-  Kbd,
-  Code,
-  Text,
-  Link,
-  Alert,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Kbd, Code, Text, Link, Alert, Heading, useColorModeValue } from '@chakra-ui/react';
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -155,20 +146,10 @@ const MDXComponents = {
   kbd: Kbd,
   hr: Tick,
   inlineCode: (props) => (
-    <Code
-      colorScheme="yellow"
-      fontSize="0.84em"
-      px={2}
-      borderRadius="md"
-      {...props}
-    />
+    <Code colorScheme="yellow" fontSize="0.84em" px={2} borderRadius="md" {...props} />
   ),
-  ol: (props) => (
-    <Box as="ol" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />
-  ),
-  ul: (props) => (
-    <Box as="ul" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />
-  ),
+  ol: (props) => <Box as="ol" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />,
+  ul: (props) => <Box as="ul" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />,
   li: (props) => <Box as="li" lineHeight="taller" pb={1} {...props} />
 };
 

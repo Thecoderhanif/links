@@ -1,13 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import {
-  Box,
-  Button,
-  HStack,
-  IconButton,
-  useColorMode
-} from '@chakra-ui/react';
+import { Box, Button, HStack, IconButton, useColorMode } from '@chakra-ui/react';
 
 const NavLink = ({ text, href, isActive }) => (
   <Link href={href} passHref>
@@ -37,16 +31,8 @@ export default function Nav() {
       />
       <HStack spacing={3}>
         <NavLink href="/" text="Home" isActive={pathname === '/'} />
-        <NavLink
-          href="/whoami"
-          text="About"
-          isActive={pathname.startsWith('/whoami')}
-        />
-        <NavLink
-          href="/blog"
-          text="Blog"
-          isActive={pathname.startsWith('/blog')}
-        />
+        <NavLink href="/whoami" text="About" isActive={pathname.startsWith('/whoami')} />
+        <NavLink href="/blog" text="Blog" isActive={pathname.startsWith('/blog')} />
       </HStack>
     </HStack>
   );

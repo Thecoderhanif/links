@@ -1,13 +1,6 @@
 import { useRouter } from 'next/router';
 import { parseISO, format } from 'date-fns';
-import {
-  Box,
-  Text,
-  Button,
-  HStack,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Text, Button, HStack, Heading, useColorModeValue } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowUpIcon } from '@chakra-ui/icons';
 
 import BlogSeo from '@/components/BlogSeo';
@@ -58,16 +51,8 @@ export default function BlogLayout({ children, frontMatter }) {
       )}
       {children}
       <HStack justify="space-between" mt={8}>
-        <Btn
-          icon={<ArrowBackIcon />}
-          text="Back"
-          onClick={() => router.push('/blog')}
-        />
-        <Btn
-          icon={<ArrowUpIcon />}
-          text="Top"
-          onClick={() => window.scrollTo(0, 0)}
-        />
+        <Btn icon={<ArrowBackIcon />} text="Back" onClick={() => router.push('/blog')} />
+        <Btn icon={<ArrowUpIcon />} text="Top" onClick={() => window.scrollTo(0, 0)} />
       </HStack>
     </>
   );

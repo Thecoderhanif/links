@@ -1,13 +1,6 @@
 import NextLink from 'next/link';
 import { parseISO, format } from 'date-fns';
-import {
-  Box,
-  Text,
-  Link,
-  Flex,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Box, Text, Link, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 
 const BlogPost = ({ title, summary, slug, publishedAt }) => {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
@@ -30,10 +23,7 @@ const BlogPost = ({ title, summary, slug, publishedAt }) => {
         }}
       >
         <Box display="block" width="100%">
-          <Flex
-            justifyContent="space-between"
-            flexDirection={['column', 'column', 'row']}
-          >
+          <Flex justifyContent="space-between" flexDirection={['column', 'column', 'row']}>
             <Heading fontSize="md" as="h3" mb={1} fontWeight="medium">
               {title}
             </Heading>
