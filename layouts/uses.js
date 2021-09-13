@@ -3,9 +3,10 @@ import { Box, Text, Heading, useColorModeValue } from '@chakra-ui/react';
 
 import { CustomLink } from '@/components/MDXComponents';
 
-const url = 'https://opakholis.dev/uses';
-const title = 'Uses - Opa Kholis Majid';
-const description = 'What i use… and why?';
+const meta = {
+  title: 'Uses',
+  description: 'Apa yang Opa gunakan sekarang.'
+};
 
 export default function UsesLayout({ children }) {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
@@ -13,10 +14,9 @@ export default function UsesLayout({ children }) {
   return (
     <>
       <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{ url, title, description }}
+        title={meta.title}
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
       />
 
       <Box pb={5} pt={2}>

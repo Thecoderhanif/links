@@ -9,20 +9,22 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 
-const title = '404 - Opa Kholis Majid';
-const description =
-  "Why show a generic 404 when I can make it sound mysterious? It seems you've found something that used to exist, or you spelled something wrong.";
+const meta = {
+  title: '404',
+  description:
+    "Why show a generic 404 when I can make it sound mysterious? It seems you've found something that used to exist, or you spelled something wrong."
+};
 
 export default function Error() {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
   return (
     <>
       <NextSeo
-        title={title}
-        description={description}
+        title={meta.title}
+        description={meta.description}
         openGraph={{
-          title,
-          description
+          title: meta.title,
+          description: meta.description
         }}
       />
       <Box pb={5} pt={2}>

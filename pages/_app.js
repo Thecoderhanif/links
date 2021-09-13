@@ -2,13 +2,13 @@ import 'focus-visible/dist/focus-visible';
 import '@fontsource/inter/variable.css';
 
 import Head from 'next/head';
+import NextNprogress from 'nextjs-progressbar';
 import { useRouter } from 'next/router';
+import { DefaultSeo, SocialProfileJsonLd } from 'next-seo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChakraProvider, useColorMode, Box } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
 import { MDXProvider } from '@mdx-js/react';
-import { DefaultSeo } from 'next-seo';
-import NextNprogress from 'nextjs-progressbar';
 
 import Nav from '@/components/Nav';
 import PageWrapper from '@/components/PageWrapper';
@@ -16,7 +16,6 @@ import MDXComponents from '@/components/MDXComponents';
 
 import themes from '@/styles/theme';
 import { prismDarkTheme, prismLightTheme } from '@/styles/prism';
-import SEO from '../next-seo.config';
 
 const PrismTheme = () => {
   const { colorMode } = useColorMode();
@@ -27,6 +26,13 @@ const PrismTheme = () => {
       `}
     />
   );
+};
+
+const meta = {
+  title: 'Opa Kholis Majid - Frontend Developer',
+  desciption:
+    'Seseorang yang menyebut dirinya sebagai Frontend developer—yang mana sekarang sedang senang ber-eksplorasi dengan Linux distribution dan Open-source Software.',
+  url: 'https://opakholis.dev'
 };
 
 // pre-defined styles for motion
@@ -46,7 +52,38 @@ const App = ({ Component, pageProps }) => {
       />
       <MDXProvider components={MDXComponents}>
         <PrismTheme />
-        <DefaultSeo {...SEO} />
+        <DefaultSeo
+          canonical={`${meta.url}${router.asPath || '/'}`}
+          title={meta.title}
+          titleTemplate={`%s - Opa Kholis Majid`}
+          description={meta.desciption}
+          openGraph={{
+            type: 'website',
+            locale: 'id_ID',
+            title: meta.title,
+            description: meta.desciption,
+            site_name: meta.url,
+            images: [
+              {
+                url: 'https://opakholis.dev/static/images/og.jpg',
+                alt: meta.title,
+                width: 1280,
+                height: 720
+              }
+            ]
+          }}
+          twitter={{
+            handle: '@opakholis',
+            site: '@opakholis',
+            cardType: 'summary_large_image'
+          }}
+        />
+        <SocialProfileJsonLd
+          type="Person"
+          name="Opa Kholis Majid"
+          url={meta.url}
+          sameAs={['https://github.com/opxop', 'httos://twitter.com/opakholis']}
+        />
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>

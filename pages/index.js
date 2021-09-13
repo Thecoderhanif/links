@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 import {
   Box,
   Text,
@@ -12,10 +13,15 @@ import Timeline from '@/components/Timeline';
 
 import { Notion, React } from '@/styles/icons';
 
+const meta = {
+  title: 'Opa Kholis Majid - Frontend Developer'
+};
+
 const Index = () => {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
   return (
     <>
+      <NextSeo title={meta.title} titleTemplate="%s" />
       <Box pb={5} pt={2}>
         <Heading as="h1" fontSize={['4xl', '5xl']} letterSpacing="tight" my={5}>
           Halo Semua.

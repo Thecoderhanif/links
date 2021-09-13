@@ -3,10 +3,11 @@ import { Box, Text, Heading, useColorModeValue } from '@chakra-ui/react';
 
 import Advices from '@/components/Advices';
 
-const url = 'https://opakholis.dev/advices';
-const title = 'Pesanmu - Opa Kholis Majid';
-const description =
-  'Keluh kesah, pendapat, informasi, atau bahkan nasihat untuk Opa.';
+const meta = {
+  title: 'Pesanmu',
+  description:
+    'Keluh kesah, pendapat, informasi, atau bahkan nasihat untuk Opa.'
+};
 
 export default function AdviceMe() {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
@@ -14,10 +15,9 @@ export default function AdviceMe() {
   return (
     <>
       <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{ url, title, description }}
+        title={meta.title}
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
       />
 
       <Box pb={5} pt={2}>

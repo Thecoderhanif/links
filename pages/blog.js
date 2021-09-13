@@ -17,10 +17,11 @@ import { Search2Icon } from '@chakra-ui/icons';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import BlogPost from '@/components/BlogPost';
 
-const url = 'https://opakholis.dev/blog';
-const title = 'Blog - Opa Kholis Majid';
-const description =
-  'Tulisan, opini dan juga dokumentasi untuk saya pribadi ketika sedang belajar atau membagikan sesuatu.';
+const meta = {
+  title: 'Tulisan',
+  description:
+    'Tulisan, opini dan juga dokumentasi untuk saya pribadi ketika sedang belajar atau membagikan sesuatu.'
+};
 
 export default function Blog({ posts }) {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
@@ -41,10 +42,9 @@ export default function Blog({ posts }) {
   return (
     <>
       <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{ url, title, description }}
+        title={meta.title}
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
       />
 
       <Box pb={5} pt={2}>

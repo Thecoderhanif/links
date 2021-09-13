@@ -3,19 +3,19 @@ import { Text, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
 
 import { CustomLink } from '@/components/MDXComponents';
 
-const url = 'https://opakholis.dev/contact';
-const title = 'Kontak - Opa Kholis Majid';
-const description = 'Cara menghubungi Opa di internet';
+const meta = {
+  title: 'Kontak',
+  description: 'Cara menghubungi Opa di internet'
+};
 
 export default function About() {
   const secondaryText = useColorModeValue('gray.700', 'gray.400');
   return (
     <>
       <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{ url, title, description }}
+        title={meta.title}
+        description={meta.description}
+        openGraph={{ title: meta.title, description: meta.description }}
       />
 
       <VStack pb={5} pt={2} alignItems="flex-start">

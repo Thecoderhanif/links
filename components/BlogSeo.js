@@ -11,13 +11,11 @@ export default function BlogSeo({ title, summary, publishedAt, url, image }) {
   return (
     <>
       <NextSeo
-        title={`${title} - Opa Kholis Majid`}
+        title={title}
         description={summary}
-        canonical={link}
         openGraph={{
           type: 'article',
           article: { publishedTime: date },
-          url: link,
           title,
           description: summary,
           images: [featuredImage]
