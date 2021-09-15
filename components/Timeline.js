@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Box,
   Flex,
   List,
   Text,
@@ -12,18 +11,13 @@ import {
   ListItem,
   useColorModeValue
 } from '@chakra-ui/react';
+
+import Link from '@/components/Link';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Check } from '@/styles/icons';
 
-import { CustomLink } from './MDXComponents';
-
-const YearDivider = () => {
-  const border = useColorModeValue('gray.200', 'gray.600');
-  return <Divider borderColor={border} my={5} w="100%" />;
-};
-
-const TimelineStep = ({ title, children }) => {
-  const secondaryText = useColorModeValue('gray.700', 'gray.400');
+function TimelineStep({ title, children }) {
+  const secondaryText = useColorModeValue('gray.700', 'gray.300');
   return (
     <ListItem>
       <Stack ml={2} mb={4}>
@@ -39,34 +33,36 @@ const TimelineStep = ({ title, children }) => {
       </Stack>
     </ListItem>
   );
-};
+}
 
-const FullTimeLine = () => (
-  <>
-    <YearDivider />
-    <Heading as="h3" fontSize="xl" mb={4} letterSpacing="lighter">
-      2019
-    </Heading>
-    <List>
-      <TimelineStep title="Kompetisi Diskominfo Karawang 🏅">
-        Berkolaborasi dengan tim sebagai Frontend developer dalam membangun sebuah sistem "Smart
-        City" berbasis website.
-        <br />
-        <Badge ariant="subtle" colorScheme="green" rounded="base">
-          Juara III
-        </Badge>
-      </TimelineStep>
-      <TimelineStep title="Partisipan Sertifikasi BNSP 🎉">Sebagai Web developer.</TimelineStep>
-    </List>
-  </>
-);
-
-const Timeline = () => {
-  const [isShowingFullTimeline, showFullTimeline] = useState(false);
-
+function FullTimeLine() {
+  const border = useColorModeValue('gray.200', 'gray.600');
   return (
-    <Box py={5}>
-      <Heading as="h2" fontSize="3xl" letterSpacing="tight" mb={4}>
+    <>
+      <Divider borderColor={border} my={5} w="100%" />
+      <Heading as="h3" fontSize="xl" mb={4} letterSpacing="lighter">
+        2019
+      </Heading>
+      <List>
+        <TimelineStep title="Kompetisi Diskominfo Karawang 🏅">
+          Berkolaborasi dengan tim sebagai Frontend developer dalam membangun sebuah sistem "Smart
+          City" berbasis website.
+          <br />
+          <Badge ariant="subtle" colorScheme="green" rounded="base">
+            Juara III
+          </Badge>
+        </TimelineStep>
+        <TimelineStep title="Partisipan Sertifikasi BNSP 🎉">Sebagai Web developer.</TimelineStep>
+      </List>
+    </>
+  );
+}
+
+export default function Timeline() {
+  const [isShowingFullTimeline, showFullTimeline] = useState(false);
+  return (
+    <>
+      <Heading as="h2" fontSize="3xl" letterSpacing="tight" mb={4} mt={10}>
         Linimasa
       </Heading>
       <Heading as="h3" fontSize="xl" mb={4} letterSpacing="lighter">
@@ -75,7 +71,7 @@ const Timeline = () => {
       <List>
         <TimelineStep title="Full-Stack Developer Intern 👨🏼‍💻">
           Membangun aplikasi Human Resource Management System di&nbsp;
-          <CustomLink href="https://jiwalu.id">Jiwalu Studio</CustomLink>.
+          <Link href="https://jiwalu.id">Jiwalu Studio</Link>.
           <br />
           <Badge ariant="subtle" colorScheme="green" rounded="base">
             CodeIgniter 3
@@ -98,8 +94,6 @@ const Timeline = () => {
           Selengkapnya
         </Button>
       )}
-    </Box>
+    </>
   );
-};
-
-export default Timeline;
+}

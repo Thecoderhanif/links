@@ -1,43 +1,19 @@
 /* eslint-disable react/display-name */
-import NextLink from 'next/link';
 import Image from 'next/image';
-import { jsx } from '@emotion/react';
-import { Box, Kbd, Code, Text, Link, Alert, Heading, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Kbd,
+  Code,
+  Text,
+  Alert,
+  Heading,
+  useColorModeValue,
+  ListItem,
+  UnorderedList,
+  OrderedList
+} from '@chakra-ui/react';
 
-const CustomLink = (props) => {
-  const href = props.href;
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
-
-  if (isInternalLink) {
-    return (
-      <NextLink href={href} passHref>
-        <Link
-          textDecor="underline"
-          _hover={{
-            textDecor: 'none',
-            borderBottom: '3px solid',
-            borderImage: 'linear-gradient(to left, #7928CA, #FF0080) 1',
-            transition: 'border-image 5s ease-in-out'
-          }}
-          {...props}
-        />
-      </NextLink>
-    );
-  }
-  return (
-    <Link
-      textDecor="underline"
-      _hover={{
-        textDecor: 'none',
-        borderBottom: '3px solid',
-        borderImage: 'linear-gradient(to left, #7928CA, #FF0080) 1',
-        transition: 'border-image 5s ease-in-out'
-      }}
-      isExternal
-      {...props}
-    />
-  );
-};
+import Link from '@/components/Link';
 
 const DocsHeading = (props) => (
   <Heading
@@ -58,7 +34,7 @@ const DocsHeading = (props) => (
     }}
     {...props}
     mb="0.3em"
-    mt="2em"
+    mt="1.9em"
   >
     {' '}
     <Box pointerEvents="auto">
@@ -89,33 +65,18 @@ const Quote = (props) => {
   const color = useColorModeValue('gray.300', 'gray.700');
   return (
     <Alert
-      mt={6}
-      w="100%"
+      as="blockquote"
       bg="transparent"
-      variant="left-accent"
-      // status="error"
-      borderLeft="4px"
       borderLeftColor={color}
+      fontWeight="bold"
+      fontStyle="italic"
+      variant="left-accent"
+      mt={6}
       css={{
         '> *:first-of-type': {
           margin: ['2', '0', '2', '10']
         }
       }}
-      {...props}
-    />
-  );
-};
-
-const Caption = (props) => {
-  const color = useColorModeValue('gray.500', 'gray.400');
-  return (
-    <Text
-      as="span"
-      fontSize="sm"
-      fontStyle="italic"
-      color={color}
-      display="table"
-      mx="auto"
       {...props}
     />
   );
@@ -130,28 +91,51 @@ const Tick = () => {
   );
 };
 
-const MDXComponents = {
-  h1: (props) => <DocsHeading as="h1" fontSize="4xl" {...props} />,
-  h2: (props) => <DocsHeading as="h2" fontSize="3xl" {...props} />,
-  h3: (props) => <DocsHeading as="h3" fontSize="2xl" {...props} />,
-  h4: (props) => <DocsHeading as="h4" fontSize="xl" {...props} />,
-  h5: (props) => <DocsHeading as="h5" fontSize="lg" {...props} />,
-  p: (props) => <Text as="p" mt={5} lineHeight="taller" {...props} />,
-  br: (props) => <Box height="24px" {...props} />,
-  Image,
-  Caption,
-  CustomLink,
-  a: CustomLink,
-  blockquote: Quote,
-  kbd: Kbd,
-  hr: Tick,
-  inlineCode: (props) => (
-    <Code colorScheme="yellow" fontSize="0.84em" px={2} borderRadius="md" {...props} />
-  ),
-  ol: (props) => <Box as="ol" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />,
-  ul: (props) => <Box as="ul" lineHeight="taller" pt={2} pl={4} ml={2} {...props} />,
-  li: (props) => <Box as="li" lineHeight="taller" pb={1} {...props} />
+// image
+const Wrapper = (props) => {
+  return <Box w="full" pt={4} {...props} />;
 };
 
-export { CustomLink };
+const Caption = (props) => {
+  const color = useColorModeValue('gray.500', 'gray.400');
+  return (
+    <Text
+      as="span"
+      w="full"
+      fontSize="sm"
+      fontStyle="italic"
+      color={color}
+      display="inline-block"
+      textAlign="right"
+      {...props}
+    />
+  );
+};
+
+const MDXComponents = {
+  // Typography
+  h1: (props) => <DocsHeading as="h1" fontSize="3xl" {...props} />,
+  h2: (props) => <DocsHeading as="h2" fontSize="2xl" {...props} />,
+  h3: (props) => <DocsHeading as="h3" fontSize="xl" {...props} />,
+  h4: (props) => <DocsHeading as="h4" fontSize="lg" {...props} />,
+  p: (props) => <Text as="p" mt={5} lineHeight="taller" {...props} />,
+  li: (props) => <ListItem mt={2} {...props} />,
+  ul: (props) => <UnorderedList pl={4} pt={2} lineHeight="tall" {...props} />,
+  ol: (props) => <OrderedList pl={4} pt={2} lineHeight="tall" {...props} />,
+  a: Link,
+  Link,
+
+  // image
+  Image,
+  Caption,
+  Wrapper,
+
+  // misc
+  br: (props) => <Box height="24px" {...props} />,
+  inlineCode: (props) => <Code px={1.5} {...props} />,
+  blockquote: Quote,
+  hr: Tick,
+  kbd: Kbd
+};
+
 export default MDXComponents;

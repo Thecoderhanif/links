@@ -1,20 +1,20 @@
 import NextLink from 'next/link';
 import { Link, VStack, HStack, Divider, IconButton, useColorModeValue } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Mail, Github, Twitter } from '@/styles/icons';
 
-import NowPlaying from './NowPlaying';
+import NowPlaying from '@/components/NowPlaying';
 
 export default function Footer() {
-  const secondaryText = useColorModeValue('gray.700', 'gray.400');
+  const secondaryText = useColorModeValue('gray.700', 'gray.300');
   const hoverText = useColorModeValue('black', 'white');
 
   return (
-    <VStack as="footer" spacing={0} maxW="768px" w="100%" px={8} mx="auto">
+    <VStack as="footer" spacing={0}>
       <Divider orientation="horizontal" my={8} />
       <NowPlaying />
-      <HStack spacing={2} pt={3} pb={[0, 3]}>
+      <HStack spacing={2} pt={3} pb={[1.5, 3]}>
         <Icon
           href="https://twitter.com/opakholis"
           ariaLabel="Twitter"
@@ -24,7 +24,7 @@ export default function Footer() {
         <Icon href="mailto:hi@opakholis.dev" ariaLabel="Email" icon={<Mail boxSize={5} />} />
       </HStack>
 
-      <HStack spacing={5} color={secondaryText} pb={[5, 10]} fontSize={['sm', 'initial']}>
+      <HStack spacing={5} color={secondaryText} pb={[5, 10]}>
         <NextLink href="/uses">
           <Link _hover={{ color: hoverText }}>/uses</Link>
         </NextLink>

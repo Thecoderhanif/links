@@ -1,7 +1,6 @@
 import 'focus-visible/dist/focus-visible';
 import '@fontsource/inter/variable.css';
 
-import Head from 'next/head';
 import NextNprogress from 'nextjs-progressbar';
 import { useRouter } from 'next/router';
 import { DefaultSeo, SocialProfileJsonLd } from 'next-seo';
@@ -10,9 +9,9 @@ import { ChakraProvider, useColorMode, Box } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
 import { MDXProvider } from '@mdx-js/react';
 
-import Nav from '@/components/Nav';
-import PageWrapper from '@/components/PageWrapper';
+import Footer from '@/components/Footer';
 import MDXComponents from '@/components/MDXComponents';
+import Nav from '@/components/Nav';
 
 import themes from '@/styles/theme';
 import { prismDarkTheme, prismLightTheme } from '@/styles/prism';
@@ -84,17 +83,13 @@ const App = ({ Component, pageProps }) => {
           url={meta.url}
           sameAs={['https://github.com/opxop', 'httos://twitter.com/opakholis']}
         />
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
-        <PageWrapper>
+        <Box maxW="768px" w="100%" px={[6, 8]} mx="auto">
           <Nav />
           <AnimatePresence initial={false} exitBeforeEnter>
             <MotionBox
               as="main"
-              flexGrow={1}
-              animate="enter"
               key={router.route}
+              animate="enter"
               initial="initial"
               exit="exit"
               variants={{
@@ -105,8 +100,9 @@ const App = ({ Component, pageProps }) => {
             >
               <Component {...pageProps} />
             </MotionBox>
+            <Footer />
           </AnimatePresence>
-        </PageWrapper>
+        </Box>
       </MDXProvider>
     </ChakraProvider>
   );

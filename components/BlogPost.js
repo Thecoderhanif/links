@@ -3,7 +3,7 @@ import { parseISO, format } from 'date-fns';
 import { Box, Text, Link, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 
 const BlogPost = ({ title, summary, slug, publishedAt }) => {
-  const secondaryText = useColorModeValue('gray.700', 'gray.400');
+  const secondaryText = useColorModeValue('gray.700', 'gray.300');
   const bgHover = useColorModeValue('gray.100', 'gray.800');
 
   return (

@@ -16,7 +16,7 @@ import { addAdvice } from '@/lib/advices';
 
 export default function AdviceForm() {
   const bgCard = useColorModeValue('gray.50', 'blackAlpha.50');
-  const secondaryText = useColorModeValue('gray.700', 'gray.400');
+  const secondaryText = useColorModeValue('gray.700', 'gray.300');
 
   const user = supabase.auth.user();
   const { register, handleSubmit, reset } = useForm();

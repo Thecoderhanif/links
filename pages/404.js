@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { Box, Flex, Text, Button, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Text, Button, Heading, useColorModeValue } from '@chakra-ui/react';
+
+import Container from '@/components/Container';
 
 const meta = {
   title: '404',
@@ -9,9 +11,9 @@ const meta = {
 };
 
 export default function Error() {
-  const secondaryText = useColorModeValue('gray.700', 'gray.400');
+  const secondaryText = useColorModeValue('gray.700', 'gray.300');
   return (
-    <>
+    <Container>
       <NextSeo
         title={meta.title}
         description={meta.description}
@@ -20,23 +22,20 @@ export default function Error() {
           description: meta.description
         }}
       />
-      <Box pb={5} pt={2}>
-        <Heading letterSpacing="tight" mb={4} as="h1" fontSize={['4xl', '5xl']}>
-          451 - Unavailable For Legal Reasons
-        </Heading>
-        <Text color={secondaryText} lineHeight="tall" mt={4} mb={8}>
-          Why show a generic 404 when I can make it sound mysterious? It seems you've found
-          something that used to exist, or you spelled something wrong. I'm guessing you spelled
-          something wrong. Can you double check that URL?
-        </Text>
-        <Flex mt={2} mb={6} justifyContent="center">
-          <Link href="/" passHref>
-            <Button as="a" p={[5, 6]} fontWeight="bold">
-              Back to Home
-            </Button>
-          </Link>
-        </Flex>
-      </Box>
-    </>
+
+      <Heading as="h1" fontSize={['4xl', '5xl']} letterSpacing="tight" my={5}>
+        451 - Unavailable For Legal Reasons
+      </Heading>
+      <Text color={secondaryText} lineHeight="tall">
+        Why show a generic 404 when I can make it sound mysterious? It seems you've found something
+        that used to exist, or you spelled something wrong. I'm guessing you spelled something
+        wrong. Can you double check that URL?
+      </Text>
+      <Link href="/" passHref>
+        <Button as="a" fontSize="sm" mt={5} variant="outline" w="256px">
+          Back to Home
+        </Button>
+      </Link>
+    </Container>
   );
 }

@@ -6,7 +6,7 @@ image: '/static/images/shortener/banner.jpg'
 tags: ['techie']
 ---
 
-<div>
+<Wrapper>
   <Image
     alt={`Cover Image - "Netlify sebagai Pemendek Tautan"`}
     src={`/static/images/shortener/banner.jpg`}
@@ -16,10 +16,10 @@ tags: ['techie']
   />
   <Caption>
     Photo by&nbsp;
-    <CustomLink href="https://unsplash.com/@overlyawesome">Daniel Gonzalez</CustomLink> on&nbsp;
-    <CustomLink href="https://unsplash.com/photos/KeiUIl9Lzo4">Unsplash</CustomLink>
+    <Link href="https://unsplash.com/@overlyawesome">Daniel Gonzalez</Link> on&nbsp;
+    <Link href="https://unsplash.com/photos/KeiUIl9Lzo4">Unsplash</Link>
   </Caption>
-</div>
+</Wrapper>
 
 Saya memang jarang sekali membagikan tautan ke orang lain, tapi setidaknya pernah dong ya. Dan apabila tautan yang ingin dibagikan cukup panjang, thanks to bit.ly dengan cara kerjanya yang memperpendek tautan menjadi sangat mudah dan _gampang diingat_(?), karena dalam "free tier" sekalipun, bit.ly tetap memberikan fitur custom link (Custom Back-half) dengan limit 50 kali per bulan—yang awalnya https://bit.ly/GhjKL menjadi https://bit.ly/gu3GanteNg misalnya. Dengan begitu lidahmu tidak akan kesulitan untuk mengucapkan tautan yang baru saja saya buat. Dan lagi, ini _gampang diingat_, benar?
 
@@ -84,12 +84,12 @@ Banyak cara untuk menambahkan tautan-tautan berikutnya, diantaranya :
 
 Karena hanya berisi 1 file, kamu tidak perlu mengkhawatirkan tentang _deploy time_ karena hanya membutuhkan waktu 2-3 detik!
 
-<div style={{ paddingTop: '1rem' }}>
+<Wrapper>
   <Image alt={`Deploy`} src={`/static/images/shortener/deploy.png`} width={1130} height={530} />
   <Caption>Deploy summary</Caption>
-</div>
+</Wrapper>
 
-**FAST? YEESSSS.**
+**FAST? ABSOLUTELY.**
 
 ## Penutup
 
