@@ -27,11 +27,11 @@ const prismBaseTheme = css`
   }
   /* Code blocks */
   pre[class*='language-'] {
-    padding-top: ${theme.space[4]};
-    padding-bottom: ${theme.space[4]};
-    padding-left: ${theme.space[4]};
-    padding-right: ${theme.space[4]};
-    margin: 0;
+    padding: ${theme.space[4]};
+    margin-top: ${theme.space[5]};
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     overflow: auto;
     min-width: 100%;
     font-size: 0.9rem;
@@ -124,6 +124,7 @@ const prismBaseTheme = css`
   .remark-code-title {
     padding: ${theme.space[2]} ${theme.space[4]};
     margin-top: ${theme.space[5]};
+    margin-bottom: -1.25rem;
     font-family: ${theme.fonts.heading};
     background: ${theme.colors.gray[200]};
     color: ${theme.colors.gray[800]};
