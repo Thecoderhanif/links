@@ -49,8 +49,8 @@
     "swr": "0.5.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "13.1.0",
-    "@commitlint/config-conventional": "13.1.0",
+    "@commitlint/cli": "13.2.1",
+    "@commitlint/config-conventional": "13.2.0",
     "commitlint-config-gitmoji": "2.2.5",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
