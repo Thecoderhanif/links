@@ -27,7 +27,7 @@
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
     "@fontsource/inter": "4.5.0",
-    "@supabase/supabase-js": "1.22.3",
+    "@supabase/supabase-js": "1.24.0",
     "date-fns": "2.22.1",
     "focus-visible": "5.2.0",
     "framer-motion": "4.1.17",
