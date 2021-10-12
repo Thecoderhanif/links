@@ -46,7 +46,7 @@
     "remark-code-titles": "0.1.2",
     "remark-slug": "6.1.0",
     "remark-unwrap-images": "2.1.0",
-    "swr": "0.5.7"
+    "swr": "1.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",
