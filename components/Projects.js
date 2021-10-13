@@ -14,7 +14,7 @@ function ProjectCard({ title, description, href, children }) {
           border="1px solid"
           borderColor={borderCard}
           borderRadius={4}
-          transition=".5s ease-in-out"
+          transition="background .5s ease-in-out"
           _hover={{ background: `${backgroundCard}` }}
           p={4}
         >
