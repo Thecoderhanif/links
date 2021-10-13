@@ -1,9 +1,8 @@
-const fs = require('fs');
+import { writeFileSync } from 'fs';
+import { globby } from 'globby';
+import prettier from 'prettier';
 
-const globby = require('globby');
-const prettier = require('prettier');
-
-(async () => {
+async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
   const pages = await globby([
     'pages/*.js',
@@ -46,5 +45,7 @@ const prettier = require('prettier');
     parser: 'html'
   });
 
-  fs.writeFileSync('public/sitemap.xml', formatted);
-})();
+  writeFileSync('public/sitemap.xml', formatted);
+}
+
+generate();
