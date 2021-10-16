@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo';
 import { Text, Heading } from '@chakra-ui/react';
 
 import Container from '@/components/Container';
+import Link from '@/components/Link';
 
 const meta = {
   title: 'Uses',
@@ -20,7 +21,8 @@ export default function UsesLayout({ children }) {
         /uses
       </Heading>
       <Text lineHeight="taller">
-        Daftar peralatan yang saya gunakan dalam kehidupan sehari-hari.
+        Daftar peralatan yang saya gunakan dalam kehidupan sehari-hari sebagai mahasiswa biasa.
+        Halaman ini terinspirasi dari <Link href="https://uses.tech/">sini</Link>.
       </Text>
       {children}
     </Container>

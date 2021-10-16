@@ -22,8 +22,7 @@ export default function UsesLayout({ children }) {
       </Heading>
       <Text lineHeight="taller" mb={8}>
         Halaman ini terinspirasi dari idenya <Link href="https://sive.rs/nowff">Derek Sivers</Link>{' '}
-        dan jika kamu memiliki situs pribadi, sebaiknya kamu membuat halaman /now juga{' '}
-        <span aria-label="meow">🐱</span>.
+        dan jika kamu memiliki situs pribadi, sebaiknya kamu membuat halaman /now juga, ucapnya.
       </Text>
       {children}
     </Container>
