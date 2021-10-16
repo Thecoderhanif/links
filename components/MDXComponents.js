@@ -120,8 +120,8 @@ const MDXComponents = {
   h4: (props) => <DocsHeading as="h4" fontSize="lg" {...props} />,
   p: (props) => <Text as="p" mt={5} lineHeight="taller" {...props} />,
   li: (props) => <ListItem mt={2} {...props} />,
-  ul: (props) => <UnorderedList pl={4} pt={2} lineHeight="tall" {...props} />,
-  ol: (props) => <OrderedList pl={4} pt={2} lineHeight="tall" {...props} />,
+  ul: (props) => <UnorderedList pl={4} pt={2} lineHeight="taller" {...props} />,
+  ol: (props) => <OrderedList pl={4} pt={2} lineHeight="taller" {...props} />,
   a: Link,
   Link,
 
