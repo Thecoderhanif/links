@@ -44,7 +44,6 @@ export default function Footer() {
           justifyItems="center"
           href="https://books.opakholis.dev"
           _hover={{ color: hoverText }}
-          isExternal
         >
           /books <ExternalLinkIcon h={3.5} w={3.5} ml="1px" />
         </Link>
