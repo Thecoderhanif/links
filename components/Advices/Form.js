@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Text,
@@ -18,11 +19,25 @@ export default function AdviceForm() {
   const bgCard = useColorModeValue('gray.50', 'blackAlpha.50');
   const secondaryText = useColorModeValue('gray.700', 'gray.300');
 
-  const user = supabase.auth.user();
   const { register, handleSubmit, reset } = useForm();
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+
+    supabase.auth.onAuthStateChange((event, session) => {
+      setSession(session);
+      fetch('/api/auth', {
+        method: 'POST',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        credentials: 'same-origin',
+        body: JSON.stringify({ event, session })
+      }).then((res) => res.json());
+    });
+  }, []);
 
   const onSubmit = handleSubmit(async (values) => {
-    await addAdvice(values.message, user);
+    await addAdvice(values.message, supabase.auth.user());
     reset();
   });
 
@@ -33,7 +48,18 @@ export default function AdviceForm() {
         Tinggalkan pesan apa saja yang menurut kamu pantas.
       </Text>
 
-      {user ? (
+      {!session ? (
+        <Stack justifyContent="start" direction={['column', 'row']} spacing={4}>
+          <Button onClick={() => loginWith3rdParty('github')} fontWeight="normal">
+            <Github mr={2} />
+            Login dengan Github
+          </Button>
+          <Button onClick={() => loginWith3rdParty('google')} fontWeight="normal">
+            <Google mr={2} />
+            Login dengan Google
+          </Button>
+        </Stack>
+      ) : (
         <InputGroup as="form" onSubmit={onSubmit} mt={4}>
           <Input
             required
@@ -49,17 +75,6 @@ export default function AdviceForm() {
             </Button>
           </InputRightElement>
         </InputGroup>
-      ) : (
-        <Stack justifyContent="start" direction={['column', 'row']} spacing={4}>
-          <Button onClick={() => loginWith3rdParty('github')} fontWeight="normal">
-            <Github mr={2} />
-            Login dengan Github
-          </Button>
-          <Button onClick={() => loginWith3rdParty('google')} fontWeight="normal">
-            <Google mr={2} />
-            Login dengan Google
-          </Button>
-        </Stack>
       )}
     </Stack>
   );
